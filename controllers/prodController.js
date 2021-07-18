@@ -42,7 +42,7 @@ exports.getProducts = (req, res, next) => {
     //limit = size,
   };
 
-  Product.find({}, {}, query)
+  Product.find({ }, { }, query)
     .select("-_id -__v -updatedAt")
     .populate("category", "-_id name")
     .exec((err, products) => {
